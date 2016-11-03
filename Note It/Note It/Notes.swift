@@ -13,34 +13,53 @@ struct Note {
     var text: String
 }
 
+enum NoteError: Error {
+    case emptyString
+    case duplicateItem
+    case outOfRange(index: Int)
+}
+
 class Notes {
     var notes:[Note]
     
-    init() {
+    public static let sharedInstance = Notes()
+    
+    private init() {
         self.notes = []
     }
     
     public func add(note: Note) throws {
         // TODO: needs implementing
+        // Check that note title and text are not empty
+        if (note.text.isEmpty) {
+            throw NoteError.emptyString
+        }
+        
+        self.notes.append(note)
     }
     
     public func getNote(atIndex index: Int) throws -> Note {
-        // TODO: needs implementing
+        if (index < 0) || (index > (self.notes.count - 1)) {
+            throw NoteError.outOfRange(index: index)
+        }
+        return self.notes[index]
     }
     
     public var count: Int {
         get {
-            return 0
-            // TODO: needs implementing
+            return self.notes.count
         }
     }
     
     public func clearList() {
-        // TODO: needs implementing
+        self.notes.removeAll()
     }
     
     public func insert(note: Note, at index: Int) throws {
-        // TODO: needs implementing
+        if (index < 0) || (index > (self.notes.count - 1)) {
+            throw NoteError.outOfRange(index: index)
+        }
+        self.notes.insert(note, at: index)
     }
     
     public func update(note: Note, at index: Int) throws {
@@ -48,6 +67,9 @@ class Notes {
     }
     
     public func remove(at index: Int) throws {
-        // TODO: needs implementing
+        if (index < 0) || (index > (self.notes.count - 1)) {
+            throw NoteError.outOfRange(index: index)
+        }
+        self.notes.remove(at: index)
     }
 }

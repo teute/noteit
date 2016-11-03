@@ -16,6 +16,8 @@
 		AF2F66861DC1F9910092B8EF /* Note_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F66851DC1F9910092B8EF /* Note_ItTests.swift */; };
 		AF2F66911DC1F9910092B8EF /* Note_ItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F66901DC1F9910092B8EF /* Note_ItUITests.swift */; };
 		AF2F669F1DC204B20092B8EF /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F669E1DC204B20092B8EF /* Notes.swift */; };
+		AF38EDF41DCB3A0A00A4A75D /* NotesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF38EDF31DCB3A0A00A4A75D /* NotesTest.swift */; };
+		AF38EDF61DCB3D5D00A4A75D /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F669E1DC204B20092B8EF /* Notes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		AF2F66901DC1F9910092B8EF /* Note_ItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_ItUITests.swift; sourceTree = "<group>"; };
 		AF2F66921DC1F9910092B8EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2F669E1DC204B20092B8EF /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		AF38EDF31DCB3A0A00A4A75D /* NotesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 			children = (
 				AF2F66851DC1F9910092B8EF /* Note_ItTests.swift */,
 				AF2F66871DC1F9910092B8EF /* Info.plist */,
+				AF38EDF31DCB3A0A00A4A75D /* NotesTest.swift */,
 			);
 			path = "Note ItTests";
 			sourceTree = "<group>";
@@ -277,6 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2F66861DC1F9910092B8EF /* Note_ItTests.swift in Sources */,
+				AF38EDF41DCB3A0A00A4A75D /* NotesTest.swift in Sources */,
+				AF38EDF61DCB3D5D00A4A75D /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +517,7 @@
 				AF2F66971DC1F9910092B8EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF2F66981DC1F9910092B8EF /* Build configuration list for PBXNativeTarget "Note ItTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +526,7 @@
 				AF2F669A1DC1F9910092B8EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF2F669B1DC1F9910092B8EF /* Build configuration list for PBXNativeTarget "Note ItUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +535,7 @@
 				AF2F669D1DC1F9910092B8EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
