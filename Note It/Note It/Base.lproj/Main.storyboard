@@ -19,16 +19,16 @@
             </objects>
             <point key="canvasLocation" x="-754" y="67"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Note It-->
         <scene sceneID="jOl-dN-ssa">
             <objects>
-                <tableViewController id="NlU-Gl-kId" sceneMemberID="viewController">
+                <tableViewController id="NlU-Gl-kId" customClass="ListController" customModule="Note_It" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="urt-iS-AbI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GWm-C5-kiA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Note" id="GWm-C5-kiA">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GWm-C5-kiA" id="xxZ-Mf-jdA">
@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="NlU-Gl-kId" id="Pin-Q8-0zo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="m3h-oh-ekj"/>
+                    <navigationItem key="navigationItem" title="Note It" id="m3h-oh-ekj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffj-yB-lOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="425" y="519"/>
         </scene>
-        <!--View Controller-->
+        <!--Note-->
         <scene sceneID="pgx-LW-8aG">
             <objects>
-                <viewController id="d24-EO-1kd" sceneMemberID="viewController">
+                <viewController id="d24-EO-1kd" customClass="NoteController" customModule="Note_It" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xfd-Ud-qg1"/>
                         <viewControllerLayoutGuide type="bottom" id="rU9-Su-Zvu"/>
@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CSh-2M-Qwv"/>
+                    <navigationItem key="navigationItem" title="Note" id="CSh-2M-Qwv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hx-1Z-NTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF258AA11DD47F22005DA8FD /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF258AA01DD47F22005DA8FD /* ListController.swift */; };
+		AF258AA31DD47F49005DA8FD /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF258AA21DD47F49005DA8FD /* NoteController.swift */; };
 		AF2F666E1DC1F9910092B8EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F666D1DC1F9910092B8EF /* AppDelegate.swift */; };
 		AF2F66701DC1F9910092B8EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F666F1DC1F9910092B8EF /* ViewController.swift */; };
 		AF2F66731DC1F9910092B8EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2F66711DC1F9910092B8EF /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF258AA01DD47F22005DA8FD /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		AF258AA21DD47F49005DA8FD /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		AF2F666A1DC1F9910092B8EF /* Note It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2F666D1DC1F9910092B8EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2F666F1DC1F9910092B8EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				AF2F667C1DC1F9910092B8EF /* Info.plist */,
 				AF2F66741DC1F9910092B8EF /* Note_It.xcdatamodeld */,
 				AF2F669E1DC204B20092B8EF /* Notes.swift */,
+				AF258AA01DD47F22005DA8FD /* ListController.swift */,
+				AF258AA21DD47F49005DA8FD /* NoteController.swift */,
 			);
 			path = "Note It";
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2F66701DC1F9910092B8EF /* ViewController.swift in Sources */,
+				AF258AA31DD47F49005DA8FD /* NoteController.swift in Sources */,
+				AF258AA11DD47F22005DA8FD /* ListController.swift in Sources */,
 				AF2F66761DC1F9910092B8EF /* Note_It.xcdatamodeld in Sources */,
 				AF2F666E1DC1F9910092B8EF /* AppDelegate.swift in Sources */,
 				AF2F669F1DC204B20092B8EF /* Notes.swift in Sources */,

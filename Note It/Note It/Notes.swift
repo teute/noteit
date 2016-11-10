@@ -63,7 +63,11 @@ class Notes {
     }
     
     public func update(note: Note, at index: Int) throws {
-        // TODO: needs implementing
+        // Check that the index is within bounds
+        if (index < 0) || (index > (self.notes.count - 1)) {
+            throw NoteError.outOfRange(index: index)
+        }
+        self.notes[index] = note
     }
     
     public func remove(at index: Int) throws {
