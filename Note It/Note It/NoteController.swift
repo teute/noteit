@@ -9,11 +9,22 @@
 import UIKit
 
 class NoteController: UIViewController {
-
+    
+    public var noteID:Int?
+    
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var noteField: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let id:Int = self.noteID {
+            print("view did load with note \(id)")
+            if let note:Note = try? Notes.sharedInstance.getNote(atIndex: id) {
+                self.title = note.title
+                self.titleField.text = note.title
+                self.noteField.text = note.text
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

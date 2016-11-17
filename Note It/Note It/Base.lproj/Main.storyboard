@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VKi-oS-25j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VKi-oS-25j">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,9 +33,12 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GWm-C5-kiA" id="xxZ-Mf-jdA">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="AuD-kh-0Oc" kind="showDetail" identifier="showNote" id="Yb7-m3-STH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,13 +79,42 @@
                     <view key="view" contentMode="scaleToFill" id="1x1-27-HUa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTL-cs-ojw">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A6V-Uv-k8W"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ifz-gL-2Cn">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aTL-cs-ojw" firstAttribute="trailing" secondItem="1x1-27-HUa" secondAttribute="trailingMargin" id="D17-44-HWR"/>
+                            <constraint firstItem="ifz-gL-2Cn" firstAttribute="top" secondItem="aTL-cs-ojw" secondAttribute="bottom" constant="8" id="MRd-ZF-XHM"/>
+                            <constraint firstItem="ifz-gL-2Cn" firstAttribute="trailing" secondItem="1x1-27-HUa" secondAttribute="trailingMargin" id="O9d-03-3Tx"/>
+                            <constraint firstItem="aTL-cs-ojw" firstAttribute="leading" secondItem="1x1-27-HUa" secondAttribute="leadingMargin" id="iNu-bi-6Ka"/>
+                            <constraint firstItem="rU9-Su-Zvu" firstAttribute="top" secondItem="ifz-gL-2Cn" secondAttribute="bottom" constant="20" id="ifp-sd-2zT"/>
+                            <constraint firstItem="ifz-gL-2Cn" firstAttribute="leading" secondItem="1x1-27-HUa" secondAttribute="leadingMargin" id="qRP-cc-uw1"/>
+                            <constraint firstItem="aTL-cs-ojw" firstAttribute="top" secondItem="Xfd-Ud-qg1" secondAttribute="bottom" constant="18" id="qz2-91-FdD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Note" id="CSh-2M-Qwv"/>
+                    <connections>
+                        <outlet property="noteField" destination="ifz-gL-2Cn" id="m9U-Q8-gz8"/>
+                        <outlet property="titleField" destination="aTL-cs-ojw" id="Whk-mb-uh5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hx-1Z-NTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314" y="520"/>
+            <point key="canvasLocation" x="1312.8" y="519.49025487256381"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vs-J4-gOc">
@@ -100,4 +133,7 @@
             <point key="canvasLocation" x="425" y="-359"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Yb7-m3-STH"/>
+    </inferredMetricsTieBreakers>
 </document>

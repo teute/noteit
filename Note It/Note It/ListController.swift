@@ -36,12 +36,10 @@ class ListController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return notes.count
     }
 
@@ -60,7 +58,11 @@ class ListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        print("row \(indexPath.row) selected")
+        if let cell:UITableViewCell = self.tableView?.cellForRow(at: indexPath) {
+            print("we found the selected cell: \(cell)")
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     /*
@@ -98,14 +100,22 @@ class ListController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showNote" {
+            print("segue with \(segue.identifier) identifier triggered")
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                print("found row \(indexPath.row)")
+                if let navigationController = segue.destination as? UINavigationController {
+                    if let noteController = navigationController.topViewController as? NoteController {
+                        print("found Note Controller")
+                        noteController.noteID = indexPath.row
+                    }
+                }
+            }
+        }
     }
-    */
 
 }
