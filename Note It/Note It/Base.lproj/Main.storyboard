@@ -114,6 +114,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstraint" destination="ifp-sd-2zT" id="EbS-2H-Xpz"/>
                         <outlet property="doneButton" destination="QD4-lS-NEC" id="1hz-MW-zg4"/>
                         <outlet property="noteField" destination="ifz-gL-2Cn" id="m9U-Q8-gz8"/>
                         <outlet property="titleField" destination="aTL-cs-ojw" id="Whk-mb-uh5"/>

@@ -15,6 +15,7 @@ class NoteController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var noteField: UITextView!
     @IBOutlet weak var doneButton: UIBarButtonItem!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     @IBAction func dismissKeyboard(_ sender: UIBarButtonItem) {
         self.titleField.resignFirstResponder()
@@ -50,6 +51,13 @@ class NoteController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
     func keyboardWillShow(_ notification: NSNotification) {
         print("keyboard will show")
         self.doneButton.tintColor = nil
+        if let info = notification.userInfo {
+            if let keyboardInfo = info[UIKeyboardFrameBeginUserInfoKey] as! NSValue? {
+                let height = keyboardInfo.cgRectValue.height
+                print("keyboard is currently \(height) dp high")
+                self.bottomConstraint.constant = height + 10
+            }
+        }
     }
     
     func keyboardWillHide(_ notification: NSNotification) {

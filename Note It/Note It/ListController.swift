@@ -15,17 +15,8 @@ class ListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        do {
-            try notes.add(note: Note(title: "Note One", text: "Note One Content"))
-            try notes.add(note: Note(title: "Note Two", text: "Note Two Content"))
-        } catch {
-            print("an error has occurred")
-        }
+        try? notes.add(note: Note(title: "Note One", text: "Note One Content"))
+        try? notes.add(note: Note(title: "Note Two", text: "Note Two Content"))
     }
 
     override func didReceiveMemoryWarning() {
