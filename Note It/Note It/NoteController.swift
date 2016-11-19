@@ -8,15 +8,27 @@
 
 import UIKit
 
-class NoteController: UIViewController {
+class NoteController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
-    public var noteID:Int?
+    public var noteID:Int = 0
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var noteField: UITextView!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
+    @IBAction func dismissKeyboard(_ sender: UIBarButtonItem) {
+        self.titleField.resignFirstResponder()
+        self.noteField.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.doneButton.tintColor = UIColor.clear
+        self.titleField.delegate = self
+        self.noteField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        
         if let id:Int = self.noteID {
             print("view did load with note \(id)")
             if let note:Note = try? Notes.sharedInstance.getNote(atIndex: id) {
@@ -25,6 +37,24 @@ class NoteController: UIViewController {
                 self.noteField.text = note.text
             }
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("finished editing the title")
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print("finished editing the note")
+    }
+    
+    func keyboardWillShow(_ notification: NSNotification) {
+        print("keyboard will show")
+        self.doneButton.tintColor = nil
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        print("keyboard will hide")
+        self.doneButton.tintColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
