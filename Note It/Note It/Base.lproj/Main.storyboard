@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GWm-C5-kiA" id="xxZ-Mf-jdA">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -107,7 +107,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Note" id="CSh-2M-Qwv">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="QD4-lS-NEC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="QD4-lS-NEC">
+                            <connections>
+                                <action selector="dismissKeyboard:" destination="d24-EO-1kd" id="bcw-ox-0df"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="QD4-lS-NEC" id="1hz-MW-zg4"/>
