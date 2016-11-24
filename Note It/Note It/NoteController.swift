@@ -10,7 +10,7 @@ import UIKit
 
 class NoteController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
     
-    public var noteID:Int = 0
+    public var noteID:Int?
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var noteField: UITextView!
@@ -63,6 +63,7 @@ class NoteController: UIViewController, UITextViewDelegate, UITextFieldDelegate 
     func keyboardWillHide(_ notification: NSNotification) {
         print("keyboard will hide")
         self.doneButton.tintColor = UIColor.clear
+        self.bottomConstraint.constant = 20
     }
 
     override func didReceiveMemoryWarning() {
